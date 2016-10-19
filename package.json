@@ -4,7 +4,7 @@
   "description": "The Matt P Music Podcast website",
   "main": "index.html",
   "scripts": {
-    "serve": "browser-sync start --server --files './index.*' './css/*.css' './img/*' --no-open",
+    "serve": "browser-sync start --server --files './index.*' './css/*.css' './img/*' './js/*' --no-open",
     "sass:compile": "node-sass ./sass/main.scss ./css/main.css --include-path ./node_modules/bourbon/app/assets/stylesheets",
     "sass:dev": "npm run sass:compile -- --watch --source-map-embed",
     "dev": "npm-run-all --parallel serve sass:dev",
