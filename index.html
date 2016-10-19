@@ -45,6 +45,13 @@
 						<time pubdate>{DayOfMonth} {ShortMonth} {Year}</time>
 						<div class="fb-like likeBtn" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="arial"></div>
 					</aside>
+					{block:ContentSource}
+						<!--
+							{SourceURL}
+							{block:SourceLogo}<img src="{BlackLogoURL}"width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />{/block:SourceLogo}
+							{block:NoSourceLogo}{SourceLink}{/block:NoSourceLogo}
+						-->
+					{/block:ContentSource}
 				</article>
 			{/block:Posts}
 
