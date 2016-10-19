@@ -1,0 +1,165 @@
+@media (max-width: em(800,16)) {
+
+	#episodes,
+	.sideSection {
+		float: none;
+		clear: none;
+		width: 100%;
+	}
+
+	#episodes {
+		clear: both;
+		padding: 3em 0 1em;
+	}
+
+	#pageHeader {
+		padding-bottom: 0;
+
+		.logo {
+			float: none;
+		}
+	}
+
+	#about {
+		width: 100%;
+		padding-top: 3rem;
+	}
+
+	#subscriptions {
+		@include clearfix;
+
+		.btnWthIcon {
+			&:nth-child(2n) {
+				width: 49%;
+				float: left;
+				clear: left;
+			}
+
+			&:nth-child(2n+1) {
+				width: 49%;
+				float: right;
+				clear: right;
+			}
+		}
+	}
+
+	#extras {
+		width: 48%;
+		float: left;
+		clear: left;
+	}
+
+	#contact {
+		width: 48%;
+		float: right;
+		clear: right;
+	}
+
+}
+
+@media (max-width: em(600,16)) {
+
+	#subscriptions {
+		.btnWthIcon {
+			&:nth-child(2n),
+			&:nth-child(2n+1) {
+				width: 100%;
+				float: none;
+				clear: none;
+			}
+		}
+	}
+
+	#extras,
+	#contact {
+		width: 100%;
+		float: none;
+		clear: none;
+	}
+
+}
+
+@media (max-width: em(500,16)) {
+
+	.pagination {
+		a {
+			span {
+				display: none;
+			}
+		}
+	}
+
+	#pageFooter {
+		> section {
+			p {
+				text-align: center;
+			}
+
+			.disclaimer {
+				width: 100%;
+			}
+
+			.mpLogo {
+				clear: both;
+				float: none;
+				margin: 0 auto;
+			}
+		}
+	}
+
+}
+
+@media (max-width: em(400,16)) {
+
+	body {
+		> section {
+			padding-left: em(10,10);
+			padding-right: em(10,10);
+		}
+	}
+
+	.episode {
+		padding: 1.5em 1.5em;
+		margin-bottom: 2.5em;
+
+		> h1 {
+			font-size: em(22,10);
+			line-height: em(24,28);
+		}
+
+		> p {
+			font-size: em(14,10);
+			line-height: em(16,14);
+		}
+
+		> ol {
+			font-size: em(12,10);
+			line-height: em(14,12);
+
+			> li {
+				padding-bottom: em(3,12);
+			}
+		}
+
+	}
+
+	#pageFooter {
+		> section {
+			padding: em(15,12) em(20,12) em(20,12);
+
+			p {
+				> a {
+					display: block;
+					clear: both;
+					margin-left: 0;
+					padding: .75em 0 .5em;
+				}
+			}
+
+			.mpLogo {
+				margin: .25em auto .75em;
+			}
+		}
+	}
+
+}

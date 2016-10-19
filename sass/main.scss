@@ -1,0 +1,474 @@
+//	IMPORTS:
+//	***************************************
+
+@import "bourbon";
+@import "mixins";
+@import "reset";
+@import "fonts";
+
+
+
+//	VARIABLES:
+//	***************************************
+
+$iconSpriteRetinaWidth: 100;
+$iconSpriteRetinaHeight: 900;
+
+$sideBarBtnBackgroundColor1: #732d07;
+$sideBarBtnBackgroundColor2: #632300;
+
+
+
+//	GENERAL:
+//	***************************************
+
+html {
+	font-family: $helvetica;
+	-webkit-font-smoothing: antialiased;
+	font-size: .625em;
+	color: #000;
+	width: 100%; height: 100%;
+	padding: 0; margin: 0;
+}
+
+body {
+	width: 100%; height: 100%;
+	background: #ee7338 url(../img/bg.jpg) -30% -50% repeat;
+	padding: 0; margin: 0;
+
+	> section {
+		max-width: 1100px;
+		margin: 0 auto;
+		padding: 5em 2em 0;	// fallback
+		padding: 5vw 2em 0;
+	}
+}
+
+* {
+	@include box-sizing(border-box);
+}
+
+::selection {
+	background: #6e2c15;
+	color: #fff;
+}
+
+::-moz-selection {
+	background: #6e2c15;
+	color: #fff;
+}
+
+a {
+	text-decoration: none;
+	cursor: pointer;
+	outline: none;
+}
+
+
+
+//	HEADER:
+//	***************************************
+
+#pageHeader {
+	padding-bottom: 3em;
+	@include clearfix;
+
+	.logo {
+		float: left;
+
+		img {
+			width: em(120,10); height: em(120,10);
+			border-bottom: 1px solid #b04f1f;
+		}
+
+		&:hover {
+			opacity: .9;
+		}
+
+		&:active {
+			position: relative;
+			top: 1px;
+
+			img {
+				border-bottom-color: transparent;
+			}
+		}
+	}
+}
+
+
+
+//	EPISODES:
+//	***************************************
+
+#episodes {
+	float: left;
+	clear: left;
+	width: 68%;
+}
+
+.episode {
+	background: #fff;
+	padding: 2.5em 3em;
+	margin-bottom: 3em;
+	font-family: $roboto;
+
+	> h1 {
+		font-size: em(28,10);
+		line-height: em(32,28);
+		font-weight: 700;
+		color: #c73d00;
+		text-transform: uppercase;
+		padding-bottom: em(10,28);
+
+		a {
+			text-decoration: none;
+
+			&:after {
+				content: "";
+				display: inline-block;
+				width: em(20,28); height: em(20,28);
+				vertical-align: -1px;
+				margin-left: em(10,28);
+				background: url(../img/icons.png) 0 0 no-repeat;
+				background-size: em($iconSpriteRetinaWidth, 28) em($iconSpriteRetinaHeight, 28);
+				opacity: .7;
+			}
+
+			&:hover:after {
+				opacity: 1;
+			}
+		}
+	}
+
+	> p {
+		font-size: em(18,10);
+		color: #6e2c15;
+		font-weight: 900;
+		padding: .25em 0;
+		@include hyphens(auto);
+	}
+
+	> ol {
+		font-size: em(13,10);
+		line-height: em(15,13);
+		font-weight: 400;
+		list-style: decimal;
+		margin-left: 1.75em;
+		padding: 1em 0 .5em;
+
+		> li {
+			padding-bottom: em(5,13);
+			font-weight: 400;
+
+			small {
+				color: #999;
+				font-size: em(11,13);
+				margin-left: .25em;
+			}
+		}
+	}
+
+	> aside {
+		padding-top: em(15,10);
+		@include clearfix;
+
+		> time {
+			font-size: em(16,10);
+			font-weight: 100;
+			color: #aaa;
+			text-transform: uppercase;
+			float: left;
+		}
+
+		> .likeBtn {
+			float: right;
+		}
+	}
+
+	a {
+		text-decoration: underline;
+		color: #be490a;
+
+		&:hover {
+			text-decoration: none;
+			color: #853102;
+		}
+
+		&:active {
+			position: relative;
+			top: 1px;
+		}
+	}
+}
+
+.pagination {
+	clear: both;
+//	border: 1px solid red;
+	color: #fff;
+	text-shadow: 0 1px 0 #d04c10;
+	@include clearfix;
+	padding-bottom: 3rem;
+
+	a {
+		color: inherit;
+		font-size: em(16,10);
+		line-height: em(30,16);
+		vertical-align: middle;
+		font-weight: 700;
+		text-transform: uppercase;
+		opacity: .9;
+
+		&.older,
+		&.older:before {
+			float: left;
+			margin-right: .75em;
+		}
+
+		&.newer,
+		&.newer:after {
+			float: right;
+			margin-left: .75em;
+		}
+
+		&.older:before,
+		&.newer:after {
+			display: block;
+			content: "";
+			background: #9a370a url(../img/icons.png) 0 0 no-repeat;
+			background-size: em($iconSpriteRetinaWidth*2, 16) em($iconSpriteRetinaHeight*2, 16);
+			width: em(30,16); height: em(30,16);
+			border-radius: 3px;
+		}
+
+		&.older:before {
+			background-position: em(-5,16) em(-85,16);
+		}
+
+		&.newer:after {
+			background-position: em(-5,16) em(-245,16);
+		}
+
+		&:hover {
+			opacity: .75;
+		}
+
+		&:active {
+			@include transform(translateY(1px));
+			opacity: 1;
+		}
+	}
+}
+
+
+
+//	SIDEBAR:
+//	***************************************
+
+.sideSection {
+	float: right;
+	clear: right;
+	width: 29%;
+	padding-top: 1rem;
+	padding-bottom: em(20,10);
+	color: #fff;
+
+	h3 {
+		font-family: $roboto;
+		font-size: em(14,10);
+		line-height: em(16,14);
+		padding-bottom: em(5,14);
+		font-weight: 900;
+		text-transform: uppercase;
+		text-shadow: 0 1px 0 rgba(0,0,0,.5);
+	}
+
+	> p {
+		font-size: em(12,10);
+		line-height: em(16,12);
+		text-shadow: 0 1px 0 rgba(113,42,5,.5);
+		padding-bottom: em(5,12);
+	}
+}
+
+#about {
+	a {
+		text-decoration: underline;
+		color: inherit;
+
+		&:hover {
+			text-decoration: none;
+			opacity: .8;
+		}
+
+		&:active {
+			position: relative;
+			top: 1px;
+			opacity: 1;
+		}
+	}
+}
+
+.btnWthIcon {
+	display: block;
+	opacity: .9;
+	color: #ffad85;
+	text-shadow: 0 1px 0 rgba(0,0,0,.3);
+	border-bottom: 1px solid #3d2200;
+	border-radius: 5px;
+	font-size: em(11,10);
+	line-height: em(13,11);
+	margin-bottom: em(5,11);
+	padding: em(10,11);
+	padding-left: em(50,11);
+	background: $sideBarBtnBackgroundColor1 url(../img/icons.png);	// fallback
+	@include background(url(../img/icons.png), linear-gradient($sideBarBtnBackgroundColor1, $sideBarBtnBackgroundColor2));
+	background-repeat: no-repeat;
+	background-size: em($iconSpriteRetinaWidth*2, 11) em($iconSpriteRetinaHeight*2, 11), 100%;
+
+	&:hover {
+		opacity: .8;
+	}
+
+	&:active {
+		opacity: 1;
+		@include transform(translateY(1px));
+		border-bottom-color: transparent;
+	}
+
+	&.enhanced {
+		background-position: em(-75,11) em(5,11), 0 0;
+	}
+
+	&.mp3 {
+		background-position: em(-75,11) em(-115,11), 0 0;
+	}
+
+	&.tracklist {
+		background-position: em(-75,11) em(-235,11), 0 0;
+	}
+
+	&.soundcloud {
+		background-position: em(-75,11) em(-355,11), 0 0;
+	}
+
+	&.spotify {
+		background-position: em(-75,11) em(-475,11), 0 0;
+	}
+
+	> strong {
+		font-family: $roboto;
+		font-weight: 700;
+		font-size: em(15,11);
+		color: #fff;
+		text-shadow: 0 1px 0 rgba(0,0,0,.5);
+		display: block;
+		clear: both;
+		padding: em(3,15) 0 em(5,15) 0;
+
+		.new:after {
+			content: "New";
+			text-transform: uppercase;
+			vertical-align: super;
+			font-size: em(9,15);
+			line-height: .5em;
+			font-weight: 900;
+			padding: .2em .3em;
+			margin-left: .2em;
+			border-radius: 3px;
+			@include linear-gradient(#ff5700, #ff2100, $fallback: #ff3900);
+			width: 5px; height: 5px;
+		}
+	}
+}
+
+.btn {
+	@extend .btnWthIcon;
+	background: $sideBarBtnBackgroundColor1;
+	@include linear-gradient($sideBarBtnBackgroundColor1, $sideBarBtnBackgroundColor2);
+	font-family: $roboto;
+	font-weight: 700;
+	font-size: em(15,11);
+	color: #fff;
+	text-shadow: 0 1px 0 rgba(0,0,0,.5);
+	padding: em(10,15);
+	text-align: center;
+}
+
+
+
+//	FOOTER:
+//	***************************************
+
+#pageFooter {
+	clear: both;
+	background: #fff;
+	font-size: em(12,10);
+	line-height: em(12,12);
+	color: #743814;
+	box-shadow: 0 0 5px rgba(0,0,0,.2);
+
+	> section {
+		max-width: 1100px;
+		margin: 0 auto;
+		padding: em(25,12) em(20,12);
+	}
+
+	p {
+		a {
+			text-decoration: underline;
+			color: inherit;
+			margin-left: 2em;
+
+			&:hover {
+				text-decoration: none;
+			}
+
+			&:active {
+				position: relative;
+				top: 1px;
+			}
+		}
+	}
+
+	.disclaimer {
+		font-size: em(10,12);
+		color: #cab2a4;
+		padding-top: em(5,10);
+		width: 80%;
+	}
+
+	.mpLogo {
+		display: block;
+		float: right;
+		width: em(30,12); height: em(30,12);
+		background: url(../img/icons.png) em(-5,12) em(-405,12) no-repeat;
+		background-size: em($iconSpriteRetinaWidth*2, 12) em($iconSpriteRetinaHeight*2, 12);
+		opacity: .8;
+		margin-left: 3em;
+
+		b {
+			display: none;
+		}
+
+		&:hover {
+			opacity: .6;
+		}
+
+		&:active {
+			@include transform(translateY(1px));
+			opacity: 1;
+		}
+	}
+}
+
+
+
+//	IMPORTS:
+//	***************************************
+
+@import "responsiveness";
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+	@import "retina";
+}

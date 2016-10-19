@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="http://podcast.mattpmusic.com/assets/img/favicon.ico">
+	<link rel="apple-touch-icon-precomposed" href="http://podcast.mattpmusic.com/assets/img/logo.jpg">
+	<!-- <link rel="stylesheet" href="http://podcast.mattpmusic.com/assets/css/main.css" media="screen"> -->
+	<link rel="stylesheet" href="/css/main.css" media="screen">
+	<!--[if lte IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<meta property="og:site_name" content="{Title}">
+	<meta property="og:image" content="http://podcast.mattpmusic.com/assets/img/logo.jpg">
+	<meta property="fb:app_id" content="119078858144619">
+	<meta property="fb:admins" content="654857984">
+	<meta name="description" content="{MetaDescription}">
+	<meta name="author" content="Peter Matkovsky | matkovsky.com">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>{Title}{block:PostTitle}: {PostTitle}{/block:PostTitle}</title>
+</head>
+<body>
+
+	<section>
+
+		<header id="pageHeader">
+			<a href="/" class="logo"><img src="http://podcast.mattpmusic.com/assets/img/logo.jpg" alt="{Title}"></a>
+			<section id="about" class="sideSection">
+				<h3>About</h3>
+				<p>{Description}</p>
+			</section>
+		</header>
+
+		<section id="subscriptions" class="sideSection">
+			<h3>Subscribe</h3>
+			<a href="http://podcast.mattpmusic.com/feed/enhanced" class="btnWthIcon enhanced"><strong>Enhanced version</strong> for iTunes, iPods, iPhones and iPads. Includes chapters and album covers.</a>
+			<a href="http://podcast.mattpmusic.com/feed/standard" class="btnWthIcon mp3"><strong>Standard MP3 version</strong> for all the other music players. Includes the tracklist and the 320kbps MP3 file.</a>
+		</section>
+
+		<section id="episodes">
+
+			{block:Posts}
+				<article class="episode {TagsAsClasses}">
+					<h1>{block:IndexPage}<a href="{Permalink}">{/block:IndexPage}{Title}{block:IndexPage}</a>{/block:IndexPage}</h1>
+					{Body}
+					<aside>
+						<time pubdate>{DayOfMonth} {ShortMonth} {Year}</time>
+						<div class="fb-like likeBtn" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="arial"></div>
+					</aside>
+				</article>
+			{/block:Posts}
+
+			{block:Pagination}
+				<div class="pagination">
+					{block:NextPage}<a href="{NextPage}" class="older">Older<span> episodes</span></a>{/block:NextPage}
+					{block:PreviousPage}<a href="{PreviousPage}" class="newer">Newer<span> episodes</span></a>{/block:PreviousPage}
+				</div>
+			{/block:Pagination}
+
+		</section>
+
+		<section id="extras" class="sideSection">
+			<h3>Extra</h3>
+			<a href="http://open.spotify.com/user/11124146557/playlist/5NMAKTa9zbeNeyu3HqtjmZ" class="btnWthIcon spotify"><strong>Spotify <small class="new"></small></strong> Follow our exclusive playlist of full length tracks from the podcast.</a>
+			<a href="https://soundcloud.com/matkovsky" class="btnWthIcon soundcloud"><strong>SoundCloud</strong> Listen to exclusive Matt P edits and mashups featured in this podcast.</a>
+			<a href="http://podcast.mattpmusic.com/feed/tracklist" class="btnWthIcon tracklist"><strong>Tracklist feed</strong> Subscribe for the tracklist of this podcast in your RSS feed reader.</a>
+		</section>
+
+		<section id="contact" class="sideSection">
+			<h3>Contact</h3>
+			<p>To contact Peter regarding the podcast, or to send him your own tracks to feature in this podcast, use this email address:</p>
+			<a href="mailto:&#109;&#097;&#116;&#116;&#112;&#064;&#109;&#097;&#116;&#116;&#112;&#109;&#117;&#115;&#105;&#099;&#046;&#099;&#111;&#109;" class="btn email">&#109;&#097;&#116;&#116;&#112;&#064;&#109;&#097;&#116;&#116;&#112;&#109;&#117;&#115;&#105;&#099;&#046;&#099;&#111;&#109;</a>
+		</section>
+
+	</section>
+
+	<footer id="pageFooter">
+		<section>
+			<a href="http://matkovsky.com" class="mpLogo"><b>Made by Peter Matkovsky with care.</b></a>
+			<p>Copyright &copy; Peter Matkovsky. <a href="/archive">Browse the archive</a></p>
+			<p class="disclaimer">All rights to published audio, video, graphic and text materials belong to their respective owners. All music featured in this podcast is for promotional purposes only. If you like the music, please support the artists by buying their music.</p>
+		</section>
+	</footer>
+
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=119078858144619";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-8004992-14']);
+		_gaq.push(['_trackPageview']);
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+</body>
+</html>

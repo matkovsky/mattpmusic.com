@@ -1,0 +1,3 @@
+@mixin hyphens($mode) {
+	@include prefixer(hyphens, $mode, webkit moz ms o spec)
+}

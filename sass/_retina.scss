@@ -1,0 +1,53 @@
+body {
+	background-size: 250px;
+}
+
+.btnWthIcon {
+	background-size: em($iconSpriteRetinaWidth, 11) em($iconSpriteRetinaHeight, 11), 100%;
+
+	&.enhanced {
+		background-position: em(-37,11) em(-310,11), 0 0;
+	}
+
+	&.mp3 {
+		background-position: em(-37,11) em(-430,11), 0 0;
+	}
+
+	&.tracklist {
+		background-position: em(-37,11) em(-550,11), 0 0;
+	}
+
+	&.soundcloud {
+		background-position: em(-37,11) em(-675,11), 0 0;
+	}
+
+	&.spotify {
+		background-position: em(-37,11) em(-790,11), 0 0;
+	}
+
+}
+
+.pagination {
+	a {
+		&.older:before,
+		&.newer:after {
+			background-size: em($iconSpriteRetinaWidth, 16) em($iconSpriteRetinaHeight, 16);
+		}
+
+		&.older:before {
+			background-position: em(4,16) em(-75,16);
+		}
+
+		&.newer:after {
+			background-position: em(5,16) em(-155,16);
+		}
+
+	}
+}
+
+#pageFooter {
+	.mpLogo {
+		background-size: em($iconSpriteRetinaWidth, 12) em($iconSpriteRetinaHeight, 12);
+		background-position: em(-5,12) em(-225,12);
+	}
+}

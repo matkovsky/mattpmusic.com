@@ -1,0 +1,39 @@
+{
+  "name": "mattpmusic.com",
+  "version": "1.0.0",
+  "description": "The Matt P Music Podcast website",
+  "main": "index.html",
+  "scripts": {
+    "serve": "browser-sync start --server --files './index.*' './css/*.css' './img/*' --no-open",
+    "sass:compile": "node-sass ./sass/main.scss ./css/main.css --include-path ./node_modules/bourbon/app/assets/stylesheets",
+    "sass:dev": "npm run sass:compile -- --watch --source-map-embed",
+    "dev": "npm-run-all --parallel serve sass:dev",
+    "build": "npm run sass:compile -- --output-style compressed",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Peter Matkovsky",
+  "license": "MIT",
+  "dependencies": {
+    "bourbon": "^4.2.7"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.17.5",
+    "node-sass": "^3.10.1",
+    "npm-run-all": "^3.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://matkovsky@github.com/matkovsky/mattpmusic.com.git"
+  },
+  "keywords": [
+    "matt p",
+    "music",
+    "podcast",
+    "radio show",
+    "trance"
+  ],
+  "bugs": {
+    "url": "https://github.com/matkovsky/mattpmusic.com/issues"
+  },
+  "homepage": "https://github.com/matkovsky/mattpmusic.com#readme"
+}
