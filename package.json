@@ -7,8 +7,11 @@
     "serve": "browser-sync start --server --files './index.*' './css/*.css' './img/*' './js/*' --no-open",
     "sass:compile": "node-sass ./sass/main.scss ./css/main.css --include-path ./node_modules/bourbon/app/assets/stylesheets",
     "sass:dev": "npm run sass:compile -- --watch --source-map-embed",
+    "sass:build": "npm run sass:compile -- --output-style compressed",
+    "js:lint": "eslint ./js/main.js",
+
     "dev": "npm-run-all --parallel serve sass:dev",
-    "build": "npm run sass:compile -- --output-style compressed",
+    "build": "npm-run-all js:lint sass:build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Peter Matkovsky",
@@ -18,6 +21,7 @@
   },
   "devDependencies": {
     "browser-sync": "^2.17.5",
+    "eslint": "^3.8.1",
     "node-sass": "^3.10.1",
     "npm-run-all": "^3.1.1"
   },
