@@ -7,7 +7,7 @@
     "serve": "browser-sync start --server --files './index.*' './css/*.css' './img/*' './js/*' --no-open",
     "sass:compile": "sass ./sass/main.scss ./css/main.css --load-path ./node_modules/bourbon/app/assets/stylesheets",
     "sass:dev": "npm run sass:compile -- --watch --embed-source-map",
-    "sass:build": "npm run sass:compile -- --output-style compressed",
+    "sass:build": "npm run sass:compile -- --style compressed",
     "js:lint": "eslint ./js/main.js",
     "dev": "npm-run-all --parallel serve sass:dev",
     "build": "npm-run-all js:lint sass:build",
