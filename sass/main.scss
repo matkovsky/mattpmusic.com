@@ -11,6 +11,7 @@
 //	VARIABLES:
 //	***************************************
 
+$imgSriteUrl: "../img/icons-2024.png";
 $iconSpriteRetinaWidth: 100;
 $iconSpriteRetinaHeight: 900;
 
@@ -130,7 +131,7 @@ a {
 				width: em(20,28); height: em(20,28);
 				vertical-align: -1px;
 				margin-left: em(10,28);
-				background: url(../img/icons.png) 0 0 no-repeat;
+				background: url($imgSriteUrl) 0 0 no-repeat;
 				background-size: em($iconSpriteRetinaWidth, 28) em($iconSpriteRetinaHeight, 28);
 				opacity: .7;
 			}
@@ -243,7 +244,7 @@ a {
 		&.newer:after {
 			display: block;
 			content: "";
-			background: #9a370a url(../img/icons.png) 0 0 no-repeat;
+			background: #9a370a url($imgSriteUrl) 0 0 no-repeat;
 			background-size: em($iconSpriteRetinaWidth*2, 16) em($iconSpriteRetinaHeight*2, 16);
 			width: em(30,16); height: em(30,16);
 			border-radius: 3px;
@@ -329,8 +330,8 @@ a {
 	margin-bottom: em(5,11);
 	padding: em(10,11);
 	padding-left: em(50,11);
-	background: $sideBarBtnBackgroundColor1 url(../img/icons.png);	// fallback
-	@include background(url(../img/icons.png), linear-gradient($sideBarBtnBackgroundColor1, $sideBarBtnBackgroundColor2));
+	background: $sideBarBtnBackgroundColor1 url($imgSriteUrl);	// fallback
+	@include background(url($imgSriteUrl), linear-gradient($sideBarBtnBackgroundColor1, $sideBarBtnBackgroundColor2));
 	background-repeat: no-repeat;
 	background-size: em($iconSpriteRetinaWidth*2, 11) em($iconSpriteRetinaHeight*2, 11), 100%;
 
@@ -450,7 +451,7 @@ a {
 		display: block;
 		float: right;
 		width: em(30,12); height: em(30,12);
-		background: url(../img/icons.png) em(-5,12) em(-405,12) no-repeat;
+		background: url($imgSriteUrl) em(-5,12) em(-405,12) no-repeat;
 		background-size: em($iconSpriteRetinaWidth*2, 12) em($iconSpriteRetinaHeight*2, 12);
 		opacity: .8;
 		margin-left: 3em;
