@@ -1,14 +1,24 @@
 (function() {
 
-    var mixcloudElements = document.querySelectorAll('#episodes pre');
+    var replaceables = document.querySelectorAll('#episodes pre');
 
-    for (var i = mixcloudElements.length - 1; i >= 0; i--) {
-        var mixcloudElement = mixcloudElements[i];
+    for (var i = replaceables.length - 1; i >= 0; i--) {
+        var replaceableElement = replaceables[i];
+        var innerText = replaceableElement.innerText;
+        var embeddableIframeContainer = document.createElement('div');
+        var newInnerHTML = '';
 
-        var mixcloudIframeContainer = document.createElement('div');
-        mixcloudIframeContainer.className = 'mixcloud';
-        mixcloudIframeContainer.innerHTML = '<iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?feed=' + encodeURIComponent('https://www.mixcloud.com/matkovsky/' + mixcloudElements[i].innerText) + '/&hide_cover=1&hide_artwork=1&light=1" frameborder="0"></iframe>';
-        mixcloudElement.parentNode.replaceChild(mixcloudIframeContainer, mixcloudElement);
+        if (innerText.match(/\[id:\s*(\d+)\]/)) {
+            var applePodcastId = innerText.match(/\[id:\s*(\d+)\]/)[1];
+
+            embeddableIframeContainer.className = 'apple-podcast';
+            newInnerHTML = '<iframe height="175" width="100%" title="Media player" src="https://embed.podcasts.apple.com/us/podcast/id279525447?i=';
+            newInnerHTML += String(applePodcastId).trim();
+            newInnerHTML += '&amp;theme=light" id="embedPlayer" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write" style="border: 0px; border-radius: 12px; width: 100%; height: 175px; max-width: 100%;"></iframe>';
+        }
+
+        embeddableIframeContainer.innerHTML = newInnerHTML;
+        replaceableElement.parentNode.replaceChild(embeddableIframeContainer, replaceableElement);
     }
 
 })();
