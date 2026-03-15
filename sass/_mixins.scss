@@ -1,3 +1,14 @@
-@mixin hyphens($mode) {
-	@include prefixer(hyphens, $mode, webkit moz ms o spec)
+// em() function — converts px to em relative to a context
+// Usage: em(20, 16) → 1.25em (20px at 16px context)
+@function em($px, $context: 16) {
+	@return calc($px / $context) * 1em;
+}
+
+// Clearfix
+@mixin clearfix {
+	&::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
 }

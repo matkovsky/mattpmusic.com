@@ -1,3 +1,5 @@
+import '../sass/main.scss';
+
 (function() {
 
     var replaceables = document.querySelectorAll('#episodes pre, #episodes p > b');
