@@ -1,6 +1,6 @@
 (function() {
 
-    var replaceables = document.querySelectorAll('#episodes pre');
+    var replaceables = document.querySelectorAll('#episodes pre, #episodes p > b');
 
     for (var i = replaceables.length - 1; i >= 0; i--) {
         var replaceableElement = replaceables[i];
