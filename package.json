@@ -1,36 +1,18 @@
 {
-  "name": "mattpmusic.com",
-  "version": "1.0.0",
-  "description": "The Matt P Music Podcast website",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "lint": "eslint ./js/main.js"
-  },
-  "author": "Peter Matkovsky",
-  "license": "MIT",
-  "devDependencies": {
-    "@eslint/js": "^9.39.4",
-    "eslint": "^9.39.4",
-    "globals": "^17.4.0",
-    "sass": "^1.98.0",
-    "vite": "^8.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://matkovsky@github.com/matkovsky/mattpmusic.com.git"
-  },
-  "keywords": [
-    "matt p",
-    "music",
-    "podcast",
-    "radio show",
-    "trance"
-  ],
-  "bugs": {
-    "url": "https://github.com/matkovsky/mattpmusic.com/issues"
-  },
-  "homepage": "https://github.com/matkovsky/mattpmusic.com#readme",
-  "packageManager": "npm@10.8.3+sha512.d08425c8062f56d43bb8e84315864218af2492eb769e1f1ca40740f44e85bd148969382d651660363942e5909cb7ffcbef7ca0ae963ddc2c57a51243b4da8f56"
+    "$schema": "https://www.schemastore.org/package.json",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "vite build",
+        "dev": "vite"
+    },
+    "devDependencies": {
+        "@tailwindcss/vite": "^4.0.0",
+        "axios": "^1.11.0",
+        "concurrently": "^9.0.1",
+        "laravel-vite-plugin": "^2.0.0",
+        "sass": "^1.98.0",
+        "tailwindcss": "^4.0.0",
+        "vite": "^7.0.7"
+    }
 }
