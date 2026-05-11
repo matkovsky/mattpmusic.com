@@ -35,6 +35,13 @@
 
         @yield('content')
 
+        <section id="search" class="sideSection">
+            <h3>Search</h3>
+            <form action="{{ route('search') }}" method="get" role="search">
+                <input type="search" name="q" value="{{ request('q') }}" placeholder="Search episodes…" aria-label="Search episodes" autocomplete="off">
+            </form>
+        </section>
+
         <section id="extras" class="sideSection">
             <h3>Extra</h3>
             <a href="https://open.spotify.com/user/11124146557/playlist/5NMAKTa9zbeNeyu3HqtjmZ" class="btnWthIcon spotify"><strong>Spotify</strong> Follow our exclusive playlist of full length tracks from the podcast.</a>
